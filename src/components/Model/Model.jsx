@@ -28,7 +28,12 @@ const Model = () => {
             >
               Confirm
             </button>
-            <button className="popup-btn cancel-btn">Cancel</button>
+            <button
+              className="popup-btn cancel-btn"
+              onClick={() => setModel(false)}
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </div>
