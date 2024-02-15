@@ -1,0 +1,13 @@
+.no-todos-text {
+  padding: 1rem;
+  margin-block: 1rem;
+  border-radius: 5px;
+  background-color: var(--clr-danger-3);
+}
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}

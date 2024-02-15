@@ -1,0 +1,25 @@
+[data-theme="light"] {
+  --clr-main: hsl(0, 0%, 100%);
+  --clr-main-400: hsl(0, 0%, 85%);
+  --clr-text: hsl(0, 0%, 0%);
+  --clr-text-300: hsl(0, 0%, 20%);
+  --clr-text-500: hsl(0, 0%, 7%);
+  --clr-primary: hsl(207, 100%, 40%);
+  --clr-accent: hsl(207, 100%, 70%);
+}
+
+[data-theme="dark"] {
+  --clr-main: hsl(0, 0%, 0%);
+  --clr-main-400: hsl(0, 0%, 15%);
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-text-300: hsl(0, 0%, 70%);
+  --clr-text-500: hsl(0, 0%, 85%);
+  --clr-primary: hsl(207, 100%, 51%);
+  --clr-accent: hsl(207, 100%, 40%);
+}
+
+:root {
+  --clr-success: hsl(120, 61%, 50%);
+  --clr-danger: hsla(0, 100%, 70%);
+  --clr-danger-3: hsla(0, 100%, 70%, 0.3);
+}

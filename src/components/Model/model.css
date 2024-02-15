@@ -1,0 +1,46 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.popup {
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: var(--clr-main);
+  color: var(--clr-text);
+  text-align: center;
+}
+
+.popup-text {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 600;
+}
+
+.popup-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.popup-btn {
+  padding: 1rem;
+  border-radius: 5px;
+  flex: 1;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  outline: none;
+}
+
+.confirm-btn {
+  background-color: var(--clr-danger);
+}
+
+.cancel-btn {
+  background-color: var(--clr-accent);
+}

@@ -1,0 +1,6 @@
+.app-heading {
+  padding-block: 1rem;
+  text-align: center;
+  font-size: clamp(24px, 5vw, 50px);
+  color: var(--clr-text);
+}

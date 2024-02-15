@@ -1,0 +1,46 @@
+.input-container {
+  display: flex;
+}
+
+.input-container > * {
+  padding: 20px;
+  outline: none;
+  border: none;
+  font-size: clamp(16px, 3vw, 18px);
+}
+
+.input-container > input {
+  flex: 1;
+  background-color: var(--clr-main-400);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: var(--clr-text);
+  min-width: 0;
+}
+
+.input-container > input::placeholder {
+  color: var(--clr-text-300);
+}
+
+.input-container > button {
+  background-color: var(--clr-accent);
+  color: var(--clr-text);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 400ms;
+}
+
+.input-container > button.edit-btn {
+  background-color: var(--clr-success);
+}
+
+.input-container > button:not(:disabled):hover,
+.input-container > button:not(:disabled):focus {
+  background-color: var(--clr-success);
+}
+
+.input-container button:disabled {
+  cursor: not-allowed;
+}
