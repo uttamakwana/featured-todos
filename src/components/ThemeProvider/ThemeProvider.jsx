@@ -1,14 +1,18 @@
 // icons
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LightModeIcon, DarkModeIcon } from "../../constants/icons.js";
 // css
 import "./styles.css";
+// setTo
 import setTo from "./utils.js";
+// image path
+import { lightImage, darkImage } from "../../constants/images.js";
+import { TodoContext } from "../../context/TodoContextProvider.jsx";
 
 const ThemeProvider = () => {
   // getting HTML element where we have set data-theme attribute
+  const { setBgPath } = useContext(TodoContext);
   const HTML = document.documentElement;
-  const body = document.body;
   // on refresh whatever the mode set we are remaining it
   HTML.setAttribute(
     "data-theme",
@@ -20,11 +24,8 @@ const ThemeProvider = () => {
   const [mode, setMode] = useState(
     localStorage.getItem("data-theme") || "light"
   );
-  if (mode === "light") {
-    body.style.backgroundImage = "url(./src/assets/images/light.jpg)";
-  } else {
-    body.style.backgroundImage = "url(./src/assets/images/dark.jpg)";
-  }
+
+  mode === "light" ? setBgPath(lightImage) : setBgPath(darkImage);
 
   // toggle the mode
   function toggleMode() {

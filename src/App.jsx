@@ -1,9 +1,16 @@
 // context provider
 import TodoContextProvider from "./context/TodoContextProvider";
 // components
-import { TodoList, TodoInput, Model, ThemeProvider } from "./components";
+import {
+  TodoList,
+  TodoInput,
+  Model,
+  ThemeProvider,
+  BGImage,
+} from "./components";
 // css
 import "./App.css";
+// img
 
 const App = () => {
   return (
@@ -17,9 +24,10 @@ const App = () => {
         <TodoList />
         {/* Model for confirmation of delete */}
         <Model />
+        <BGImage />
+        <ThemeProvider />
       </TodoContextProvider>
       {/* Theme Changing Button */}
-      <ThemeProvider />
     </>
   );
 };

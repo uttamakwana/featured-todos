@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
-
+// light image
+import { lightImage } from "../constants/images.js";
 export const TodoContext = createContext(null);
 
 const TodoContextProvider = ({ children }) => {
@@ -13,6 +14,8 @@ const TodoContextProvider = ({ children }) => {
   const [todos, setTodos] = useState(todosFromLocalStorage);
   // to open and close model to delete the todo
   const [model, setModel] = useState(false);
+  // bg image path
+  const [bgPath, setBgPath] = useState(lightImage);
 
   return (
     <TodoContext.Provider
@@ -23,6 +26,8 @@ const TodoContextProvider = ({ children }) => {
         setTodos,
         model,
         setModel,
+        bgPath,
+        setBgPath,
       }}
     >
       {children}
