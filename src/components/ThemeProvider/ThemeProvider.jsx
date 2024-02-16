@@ -25,19 +25,19 @@ const ThemeProvider = () => {
     localStorage.getItem("data-theme") || "light"
   );
 
-  mode === "light" ? setBgPath(lightImage) : setBgPath(darkImage);
-
   // toggle the mode
   function toggleMode() {
     theme === "light"
-      ? setTo("dark", setMode, HTML)
-      : setTo("light", setMode, HTML);
+      ? setTo("dark", setMode, HTML, setBgPath, darkImage)
+      : setTo("light", setMode, HTML, setBgPath, lightImage);
   }
 
   return (
-    <button id="theme-btn" onClick={toggleMode}>
-      {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-    </button>
+    <>
+      <button id="theme-btn" className="theme-btn" onClick={toggleMode}>
+        {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+      </button>
+    </>
   );
 };
 

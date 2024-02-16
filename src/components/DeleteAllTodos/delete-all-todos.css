@@ -1,0 +1,5 @@
+.delete-all-todos {
+  bottom: 5rem;
+  background-color: var(--clr-danger);
+  color: #fff;
+}

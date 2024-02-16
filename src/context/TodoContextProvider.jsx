@@ -16,7 +16,10 @@ const TodoContextProvider = ({ children }) => {
   const [model, setModel] = useState(false);
   // bg image path
   const [bgPath, setBgPath] = useState(lightImage);
-
+  // clear all todos
+  const [isClearAllTodos, setIsClearAllTodos] = useState(false);
+  // todo input value
+  const [text, setText] = useState("");
   return (
     <TodoContext.Provider
       value={{
@@ -28,6 +31,10 @@ const TodoContextProvider = ({ children }) => {
         setModel,
         bgPath,
         setBgPath,
+        isClearAllTodos,
+        setIsClearAllTodos,
+        text,
+        setText,
       }}
     >
       {children}

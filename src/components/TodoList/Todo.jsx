@@ -89,7 +89,7 @@ const Todo = ({ todo }) => {
           onClick={() => handleUnchecked(todo)}
         >
           {todo.completed ? (
-            <CheckedIcon />
+            <CheckedIcon className="checked-icon" />
           ) : (
             <UncheckedIcon className="unchecked-icon" />
           )}

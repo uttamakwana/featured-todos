@@ -17,15 +17,14 @@
 .todo.completed {
   text-decoration: line-through;
   font-style: italic;
-  color: hsl(120, 61%, 30%);
 }
 
 .todo.completed img {
   opacity: 0.5;
 }
 
-.todo.completed .todo-time {
-  color: hsl(120, 61%, 30%);
+.todo.completed .checked-icon {
+ color: var(--clr-success)
 }
 
 .todo.completed .success-overlay {

@@ -1,5 +1,5 @@
 // useContext & useState
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 // css
 import "./todo-input.css";
 // context of todo
@@ -9,8 +9,8 @@ import { addTodo, editTodo } from "./utils";
 
 const TodoInput = () => {
   // state variables from context
-  const { todo, setTodo, todos, setTodos } = useContext(TodoContext);
-  const [text, setText] = useState("");
+  const { model, todo, setTodo, todos, setTodos, text, setText } =
+    useContext(TodoContext);
 
   //function: handle todo form submit
   function handleSubmit(e) {
@@ -18,7 +18,7 @@ const TodoInput = () => {
     e.preventDefault();
     // input element
     const input = e.target[0];
-    if (!todo.text) {
+    if (!todo?.text) {
       // add todo
       addTodo(text, todos, setTodos);
     } else {
@@ -33,11 +33,11 @@ const TodoInput = () => {
 
   // setting text value to edited text todo value
   useEffect(() => {
-    if (todo.text) {
+    if (todo?.text) {
       setText(todo.text);
       document.querySelector("#todo-input").focus();
     }
-  }, [todo]);
+  }, [setText, todo]);
   // component starts here
   return (
     <>
@@ -54,10 +54,10 @@ const TodoInput = () => {
           onInput={(e) => setText(e.target.value)}
         />
         <button
-          className={`todo-add-btn ${todo.text && "edit-btn"}`}
+          className={`todo-add-btn ${todo?.text && !model && "edit-btn"}`}
           disabled={text ? false : true}
         >
-          {todo.text ? "Edit" : "Add"}
+          {todo?.text && !model ? "Edit" : "Add"}
         </button>
       </form>
     </>
