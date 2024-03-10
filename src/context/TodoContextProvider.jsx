@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 // light image
-import { lightImage } from "../constants/images.js";
+import { darkImage, lightImage } from "../constants/images.js";
 export const TodoContext = createContext(null);
 
 const TodoContextProvider = ({ children }) => {
@@ -15,7 +15,14 @@ const TodoContextProvider = ({ children }) => {
   // to open and close model to delete the todo
   const [model, setModel] = useState(false);
   // bg image path
-  const [bgPath, setBgPath] = useState(lightImage);
+  const [bgPath, setBgPath] = useState(() => {
+    const mode = JSON.parse(localStorage.getItem("data-theme"));
+    if (mode === "dark") {
+      return darkImage;
+    } else {
+      return lightImage;
+    }
+  });
   // clear all todos
   const [isClearAllTodos, setIsClearAllTodos] = useState(false);
   // todo input value
