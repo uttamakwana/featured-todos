@@ -16,13 +16,14 @@ const TodoContextProvider = ({ children }) => {
   const [model, setModel] = useState(false);
   // bg image path
   const [bgPath, setBgPath] = useState(() => {
-    const mode = JSON.parse(localStorage.getItem("data-theme"));
+    const mode = localStorage.getItem("data-theme");
     if (mode === "dark") {
       return darkImage;
     } else {
       return lightImage;
     }
   });
+  console.log(bgPath);
   // clear all todos
   const [isClearAllTodos, setIsClearAllTodos] = useState(false);
   // todo input value
